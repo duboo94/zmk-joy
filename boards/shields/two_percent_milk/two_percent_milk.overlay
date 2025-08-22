@@ -38,4 +38,8 @@
 
 		};
 	};
+	
+	    chosen {
+        zmk,pointing-device = &anin0;
+    };
 };
