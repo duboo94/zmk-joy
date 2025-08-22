@@ -31,19 +31,14 @@
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>;
 
-			/* enable report mdoe for gamepad axix or knob */
-			/* to only call input_report on quantquantized value is updated */
-			/* NOTE: mouse input does NOT need this */
-			/*report-on-change-only;*/
-
 		};
 	};
 	
-	    rmb_key: rmb_key {
-        compatible = "zmk,behavior-gpio-key";
-        gpios = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* Adjust for your wiring */
-        label = "RMB Key";
-        bindings = <&kp BTN_RIGHT>; /* BTN_RIGHT = mouse right click */
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios
+            = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 	
 	    chosen {
