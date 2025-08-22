@@ -39,6 +39,13 @@
 		};
 	};
 	
+	    rmb_key: rmb_key {
+        compatible = "zmk,behavior-gpio-key";
+        gpios = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* Adjust for your wiring */
+        label = "RMB Key";
+        bindings = <&kp BTN_RIGHT>; /* BTN_RIGHT = mouse right click */
+    };
+	
 	    chosen {
         zmk,pointing-device = &anin0;
     };
