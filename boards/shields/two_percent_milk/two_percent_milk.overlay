@@ -1,5 +1,8 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &adc {
 	status = "okay";
@@ -7,11 +10,18 @@
 
 / {
 
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios
+            = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpio0 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
 		x-ch {
-			io-channels = <&adc 10>; // <--- see ain-map.png for nRF52840
+			io-channels = <&adc 7>; // <--- see ain-map.png for nRF52840 5 or 10
 			mv-mid = <1300>;
 			mv-min-max = <1600>;
 			mv-deadzone = <88>;
@@ -22,7 +32,7 @@
 			input-code = <INPUT_REL_X>;
 		};
 		y-ch {
-			io-channels = <&adc 8>; // <--- see ain-map.png for nRF52840
+			io-channels = <&adc 5>; // <--- see ain-map.png for nRF52840 7 or 8
 			mv-mid = <1300>;
 			mv-min-max = <1600>;
 			mv-deadzone = <88>;
@@ -42,12 +52,4 @@
 		input-processors = <&zip_xy_scaler 1 1>;
     };
 	
-    kscan0: kscan {
-        compatible = "zmk,kscan-gpio-direct";
-        input-gpios
-            = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    };
-	
-
 };
