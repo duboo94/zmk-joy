@@ -34,6 +34,12 @@
 		};
 	};
 	
+	    analog_input_listener {
+        status = "okay";
+        compatible = "zmk,input-listener";
+        device = <&anin0>;
+    };
+	
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
         input-gpios
