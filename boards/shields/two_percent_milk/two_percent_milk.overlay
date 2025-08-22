@@ -41,7 +41,5 @@
             , <&gpio0 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 	
-	    chosen {
-        zmk,pointing-device = &anin0;
-    };
+
 };
