@@ -1,18 +1,16 @@
 manifest:
-  defaults:
-    revision: v0.3
   remotes:
-    - name: zmkfirmware
+    - name: zmk
       url-base: https://github.com/zmkfirmware
-      
+    - name: yangxing844
+      url-base: https://github.com/yangxing844
     - name: badjeff
       url-base: https://github.com/badjeff
-      
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: yangxing844
+      revision: main
       import: app/west.yml
-      
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
