@@ -1,8 +1,22 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <physical_layouts.dtsi>
 
 / {
+
+	chosen {
+    zmk,physical-layout = &physical_layout0;
+  };
+
+	physical_layout0: physical_layout_0 {
+		kscan = <&kscan0>;
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
