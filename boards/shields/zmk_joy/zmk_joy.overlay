@@ -11,12 +11,13 @@
 
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
+    codes = <INPUT_REL_X INPUT_REL_Y>;
     track-remainders;
     min-factor = <200>;
     max-factor = <4000>;
-    speed-threshold = <800>;
-    speed-max = <5000>;
-    acceleration-exponent = <3>;
+    speed-threshold = <1500>;
+    speed-max = <6000>;
+    acceleration-exponent = <5>;
 };
 
 / {
@@ -72,7 +73,6 @@
         compatible = "zmk,input-listener";
         device = <&anin0>;
 		input-processors = <
-			&zip_xy_scaler 1 1
 			&pointer_accel
 		>;
     };
