@@ -1,0 +1,4 @@
+if SHIELD_ZMK_JOY
+	config ZMK_KEYBOARD_NAME
+	default "zmk joy"
+endif
