@@ -12,11 +12,11 @@
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     track-remainders;
-    min-factor = <100>;
-    max-factor = <10000>;
-    speed-threshold = <4280>;
-    speed-max = <8010>;
-    acceleration-exponent = <5>;
+    min-factor = <0>;
+    max-factor = <0>;
+    speed-threshold = <0>;
+    speed-max = <0>;
+    acceleration-exponent = <1>;
 };
 
 / {
@@ -69,11 +69,10 @@
 	
 	    analog_input_listener {
         status = "okay";
+		input-processors = <&pointer_accel>;
         compatible = "zmk,input-listener";
         device = <&anin0>;
-		input-processors = <
-			&pointer_accel
-		>;
+
     };
 	
 };
