@@ -5,10 +5,13 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+<<<<<<< HEAD
 
 &adc {
 	status = "okay";
 };
+=======
+>>>>>>> parent of 958fa85 (clear everything)
 
 / {
 
