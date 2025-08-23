@@ -47,6 +47,7 @@
 			mv-deadzone = <100>;
 			scale-multiplier = <3>;
 			scale-divisor = <700>;
+			invert;
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>;
 
