@@ -13,7 +13,7 @@
     input-type = <INPUT_EV_REL>;
     track-remainders;
     min-factor = <100>;
-    max-factor = <8010>;
+    max-factor = <10000>;
     speed-threshold = <4280>;
     speed-max = <8010>;
     acceleration-exponent = <5>;
@@ -45,7 +45,7 @@
 			io-channels = <&adc 5>; // <--- see ain-map.png for nRF52840 5 or 10
 			mv-mid = <1600>;
 			mv-min-max = <1800>;
-			mv-deadzone = <80>;
+			mv-deadzone = <50>;
 			scale-multiplier = <4>;
 			scale-divisor = <700>;
 			evt-type = <INPUT_EV_REL>;
@@ -55,7 +55,7 @@
 			io-channels = <&adc 7>; // <--- see ain-map.png for nRF52840 7 or 8
 			mv-mid = <1700>;
 			mv-min-max = <1800>;
-			mv-deadzone = <80>;
+			mv-deadzone = <50>;
 			scale-multiplier = <4>;
 			scale-divisor = <700>;
 			invert;
