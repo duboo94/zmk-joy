@@ -6,6 +6,9 @@ manifest:
       url-base: https://github.com/badjeff
     - name: heinn-dev
       url-base: https://github.com/heinn-dev
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov     
+      
   projects:
     - name: zmk
       remote: heinn-dev
@@ -14,5 +17,9 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
+      revision: main
+      
   self:
     path: config

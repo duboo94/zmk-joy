@@ -3,6 +3,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <behaviors/input_gestures_accel.dtsi>
 
 &adc {
 	status = "okay";
@@ -34,7 +35,7 @@
 			io-channels = <&adc 5>; // <--- see ain-map.png for nRF52840 5 or 10
 			mv-mid = <1600>;
 			mv-min-max = <1800>;
-			mv-deadzone = <100>;
+			mv-deadzone = <80>;
 			scale-multiplier = <4>;
 			scale-divisor = <700>;
 			evt-type = <INPUT_EV_REL>;
@@ -44,7 +45,7 @@
 			io-channels = <&adc 7>; // <--- see ain-map.png for nRF52840 7 or 8
 			mv-mid = <1700>;
 			mv-min-max = <1800>;
-			mv-deadzone = <100>;
+			mv-deadzone = <80>;
 			scale-multiplier = <4>;
 			scale-divisor = <700>;
 			invert;
@@ -54,11 +55,24 @@
 		};
 	};
 	
+	&pointer_accel {
+    input-type = <INPUT_EV_REL>;  // For relative input devices
+    track-remainders;             // Accumulate fractional movements
+    min-factor = <800>;          // 0.8x at very slow speeds
+    max-factor = <3000>;         // 3.0x at fast speeds
+    speed-threshold = <1200>;     // 1200 counts/sec for 1x
+    speed-max = <6000>;          // 6000 counts/sec for max accel
+    acceleration-exponent = <2>;  // Quadratic acceleration curve
+	};
+	
 	    analog_input_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
-		input-processors = <&zip_xy_scaler 1 1>;
+		input-processors = <
+			&zip_xy_scaler 1 1
+			&pointer_accel
+		>;
     };
 	
 };
