@@ -33,9 +33,9 @@
 		x-ch {
 			io-channels = <&adc 5>; // <--- see ain-map.png for nRF52840 5 or 10
 			mv-mid = <1600>;
-			mv-min-max = <2000>;
+			mv-min-max = <1900>;
 			mv-deadzone = <100>;
-			scale-multiplier = <2>;
+			scale-multiplier = <3>;
 			scale-divisor = <700>;
 			invert;
 			evt-type = <INPUT_EV_REL>;
@@ -44,11 +44,10 @@
 		y-ch {
 			io-channels = <&adc 7>; // <--- see ain-map.png for nRF52840 7 or 8
 			mv-mid = <1700>;
-			mv-min-max = <2000>;
+			mv-min-max = <1900>;
 			mv-deadzone = <100>;
-			scale-multiplier = <2>;
+			scale-multiplier = <3>;
 			scale-divisor = <700>;
-			invert;
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>;
 
