@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: heinn-dev
       url-base: https://github.com/heinn-dev
-    - name: oleksandrmaslov
-      url-base: https://github.com/oleksandrmaslov     
+    - name: nuovotaka
+      url-base: https://github.com/nuovotaka
       
   projects:
     - name: zmk
@@ -17,8 +17,8 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
-    - name: zmk-pointing-acceleration
-      remote: oleksandrmaslov
+    - name: zmk-pointing-acceleration-alpha
+      remote: nuovotaka
       revision: main
       
   self:
