@@ -1,13 +1,13 @@
 manifest:
   remotes:
-    - name: zmkfirmware
+    - name: zmk
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: heinn-dev
       url-base: https://github.com/heinn-dev
   projects:
-    - name: zmkfirmware
+    - name: zmk
       remote: heinn-dev
       revision: main
       import: app/west.yml
