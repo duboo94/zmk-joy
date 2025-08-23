@@ -4,9 +4,11 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: heinn-dev
+      url-base: https://github.com/heinn-dev
   projects:
-    - name: zmk
-      remote: zmkfirmware
+    - name: zmkfirmware
+      remote: heinn-dev
       revision: main
       import: app/west.yml
     - name: zmk-analog-input-driver
