@@ -16,6 +16,16 @@ V#include <dt-bindings/zmk/matrix_transform.h>
             = <&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio0 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
+	
+	default_transform: keymap_transform0 {
+        compatible = "zmk,matrix-transform";
+        columns = <1>; // Length of the "col-gpios" array
+        rows = <2>; // Length of the "row-gpios" array
+        map = <
+        //   Key 1 | Key 2 |
+            RC(0,0) RC(0,1)
+        >;
+    };
 
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";

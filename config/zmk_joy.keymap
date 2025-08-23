@@ -15,6 +15,7 @@
 		kscan = <&kscan0>;
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
+		transform = <&default_transform>;
     };
 
     keymap {
