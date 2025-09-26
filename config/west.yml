@@ -1,7 +1,7 @@
 manifest:
   remotes:
-    - name: duboo94
-      url-base: https://github.com/duboo94
+    - name: zmk
+      url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: heinn-dev
@@ -11,7 +11,7 @@ manifest:
       
   projects:
     - name: zmk
-      remote: duboo94
+      remote: heinn-dev
       revision: main
       import: app/west.yml
     - name: zmk-analog-input-driver
